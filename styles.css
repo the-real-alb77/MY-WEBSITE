@@ -7,14 +7,11 @@
 
 html, body{
   padding: 5px;
-  /*background-color: rgb(225, 225, 225);*/
   background-image: 
-  url(./pexels-freestockpro-2781814.jpg);
+  url(./laptop-half-closed-dark-with-colourful-glow-glasses-paper-cup.jpg);
   background-size: cover;
   background-position: center;
-  background-repeat: repeat;
-  
-  
+ 
 }
 
 .main-box1 {
@@ -38,6 +35,19 @@ font-weight: bold;
 
 }
 
+div.header-left {
+animation-name: headbounce;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  
+}
+
+@keyframes headbounce {
+  0% { transform: translateY(100%);}
+  50% { transform: translateY(-50%);}
+  100% { transform: translateY(0);}
+}
 
 .header-right ul {
   
@@ -48,7 +58,7 @@ font-weight: bold;
 }
 .main-box2{
   display: grid;
-  grid-template-columns: 500px auto 500px;
+  grid-template-columns: auto auto;
   grid-template-rows: auto;
   
 
@@ -56,48 +66,98 @@ font-weight: bold;
 .button1 {
   background-color: #4CAF50;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
   padding: 5px 5px;
   border-radius: 15px;
   width: 200px;
-  height: 50px;
-  
+  height: 100px;
+  transition: width 2s, height 2s, transform 2s;
+  animation-name: buttonspin;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
   }
-.top-left {
-  display: grid;
-  justify-self: start;
-  
-}
-.top-left h1 {
-  color: rgb(20, 198, 238);
-  font-size: 40px;
-  text-align: start;
-  margin-bottom: 20px;
-  margin-top: 30%;
 
-}
-.top-left h4 {
-  font-size: large;
-  
-}
+  @keyframes buttonspin {
+    0% { background-color: #4CAF50;}
+    25% { background-color: yellow; }
+    50% { background-color: blue; }
+    75% { background-color: red; }
+    100% { background-color: cyan};
+  }
+
+  .button1:hover{
+    width: 500px;
+    height: 200px;
+    transform: rotate(180deg);
+  }
 .top-right {
-  display: grid;
-  justify-self: end;
+  
+  width: auto;
 }
-.top-right img {
+ 
   
-  width: 400px;
-  height: 400px;
-  justify-items: end;
-  
+
+.top-right h1 {
+  color: rgb(20, 198, 238);
+  font-size: 70px;
+
+  display: block;
+  animation-name: hero;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3s;
+
 }
 
+@keyframes hero {
+  0% { color: rgb(20, 198, 238);}
+  25% { color: rgb(224, 35, 10);}
+  50% { color: rgb(4, 180, 57);}
+  75% { translate: scale(80px);}
+  100% { color: rgb(20, 198, 238); }
+}
+.top-right h4 {
+  font-size: large;
+  color: azure;
+}
+
+.top-left img {
+  width: auto !important;
+  
+}
+.solv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(300px);
+  gap: 30px;
+  
+}
 
 .header-msg1 {
-  color: #000;
+  color: #1723d77f;
   font-size: 20px;
-  min-height: 100px;
-  
+ 
+  background-color: white;
+  box-shadow: rgb(175, 14, 175) 5px 5px 5px;
+}
+.header-msg1 h2 {
+
+  text-align: center;
+}
+.whoami {
+  color: #1e1bcd7f;
+  font-size: 20px;
+  background-color: white;
+  box-shadow: rgb(205, 36, 205) 5px 5px 5px;
+  transition: ;
+}
+
+.whoami h2 {
+
+  text-align: center;
 }
 .main-box3 {
   display: grid;
@@ -115,15 +175,17 @@ font-weight: bold;
   display: grid;
   grid-template-columns: (150px, 4);
   grid-template-rows: 50px 100px
-  
-  
+   
 }
 
 .mid-1 {
-  
   background-color: white;
   grid-column: 1 / 4;
   grid-row: 10px;
+
+}
+div.mid-1 {
+  
 }
 .mid-1 p {
   color: blue;
@@ -146,6 +208,7 @@ font-weight: bold;
 
 .abt-2 {
   background-color: white;
+  text-align: center;
   
   
 }
@@ -153,7 +216,7 @@ font-weight: bold;
 
 .main-box4 {
   display: grid;
-  grid-template-columns: 1.5fr 2fr 3.5fr;
+  grid-template-columns: 1.5fr 2.5fr 3.5fr;
   grid-template-rows: 250px;
   grid-column-gap: 35px;
   
@@ -165,17 +228,18 @@ font-weight: bold;
   border: #4CAF50 15px solid;
   background-color: white;
   
+  
   }
 
 .icons {
   border: #4CAF50 10px solid;
   background-color: white;
+  align-self: center;
   
 }
 .header-msg3 {
   background-color: white;
   border: #4CAF50 5px solid;
-  align-self: center;
   
 }
 
@@ -214,6 +278,8 @@ font-weight: bold;
   display:  block;
   transition: opacity 0.3s, transform 0.3s;
 }
+/* ABOUT PAGE STYLES GO HERE */
+
 @media (max-width: 768px) {
   body {
       grid-template-columns: 1fr; /* Stack columns on small screens */
